@@ -1,10 +1,8 @@
 'use strict';
 
-exports = module.exports = function( router, passport ) {
-    router.get( '/', function( req, res ) {
-        res.json({ home: true });
-    })
-    .get( '/profile', function( req, res ) {
-        res.json({ profile: true });
-    });
+var mainRoutes = require( './mainRoutes' );
+
+exports = module.exports = function indexRoutes( router ) {
+  router.get( '/', mainRoutes.index );
+  router.get( '/profile', mainRoutes.profile );
 };
